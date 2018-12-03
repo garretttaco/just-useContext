@@ -1,28 +1,29 @@
 export let topics = [
-  { id: 1, name: "Penguin" },
-  { id: 2, name: "Elephant" },
-  { id: 3, name: "Apple" },
-  { id: 4, name: "Microsoft" },
-  { id: 5, name: "Ice cream" },
-  { id: 6, name: "Soup" },
-  { id: 7, name: "Pizza" },
-  { id: 8, name: "Doughnuts" },
-  { id: 9, name: "Fireworks" },
-  { id: 10, name: "Ferrari" },
-  { id: 11, name: "Jeep" },
+  { id: 1, name: "Penguin", value: 1, label: "Penguin" },
+  { id: 2, name: "Elephant", value: 2, label: "Elephant" },
+  { id: 3, name: "Apple", value: 3, label: "Apple" },
+  { id: 4, name: "Microsoft", value: 4, label: "Microsoft" },
+  { id: 5, name: "Ice cream", value: 5, label: "Ice cream" },
+  { id: 6, name: "Soup", value: 6, label: "Soup" },
+  { id: 7, name: "Pizza", value: 7, label: "Pizza" },
+  { id: 8, name: "Doughnuts", value: 8, label: "Doughnuts" },
+  { id: 9, name: "Fireworks", value: 9, label: "Fireworks" },
+  { id: 10, name: "Ferrari", value: 10, label: "Ferrari" },
+  { id: 11, name: "Jeep", value: 11, label: "Jeep" },
+  { id: 12, name: "Gas", value: 12, label: "Gas" },
   // Has no comparisons
-  { id: 12, name: "Air" }
+  { id: 13, name: "Air", value: 13, label: "Air" }
 ];
 
 export let comparisons = [
-  { id: 1, description: "Better than" },
-  { id: 2, description: "Worse than" },
-  { id: 3, description: "Cooler than" },
-  { id: 4, description: "Less cool than" },
-  { id: 5, description: "Eats" },
-  { id: 6, description: "Faster than" },
-  { id: 7, description: "Slower than" },
-  { id: 8, description: "Burns" }
+  { id: 1, description: "Better than", value: 1, label: "Better than" },
+  { id: 2, description: "Worse than", value: 2, label: "Worse than" },
+  { id: 3, description: "Cooler than", value: 3, label: "Cooler than" },
+  { id: 4, description: "Less cool than", value: 4, label: "Less cool than" },
+  { id: 5, description: "Eats", value: 5, label: "Eats" },
+  { id: 6, description: "Faster than", value: 6, label: "Faster than" },
+  { id: 7, description: "Slower than", value: 7, label: "Slower than" },
+  { id: 8, description: "Burns", value: 8, label: "Burns" }
 ];
 
 export let topicComparisons = [
@@ -84,5 +85,6 @@ export let topicComparisons = [
   { topicId: 11, comparisonId: 4 },
   { topicId: 11, comparisonId: 6 },
   { topicId: 11, comparisonId: 7 },
-  { topicId: 11, comparisonId: 8 }
+  { topicId: 11, comparisonId: 8 },
+  { topicId: 12, comparisonId: 8 }
 ];
