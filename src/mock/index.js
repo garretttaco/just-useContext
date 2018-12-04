@@ -9,10 +9,7 @@ export let topics = [
   { id: 8, name: "Doughnuts", value: 8, label: "Doughnuts" },
   { id: 9, name: "Fireworks", value: 9, label: "Fireworks" },
   { id: 10, name: "Ferrari", value: 10, label: "Ferrari" },
-  { id: 11, name: "Jeep", value: 11, label: "Jeep" },
-  { id: 12, name: "Gas", value: 12, label: "Gas" },
-  // Has no comparisons
-  { id: 13, name: "Air", value: 13, label: "Air" }
+  { id: 11, name: "Jeep", value: 11, label: "Jeep" }
 ];
 
 export let comparisons = [
@@ -20,10 +17,10 @@ export let comparisons = [
   { id: 2, description: "Worse than", value: 2, label: "Worse than" },
   { id: 3, description: "Cooler than", value: 3, label: "Cooler than" },
   { id: 4, description: "Less cool than", value: 4, label: "Less cool than" },
-  { id: 5, description: "Eats", value: 5, label: "Eats" },
   { id: 6, description: "Faster than", value: 6, label: "Faster than" },
   { id: 7, description: "Slower than", value: 7, label: "Slower than" },
-  { id: 8, description: "Burns", value: 8, label: "Burns" }
+  { id: 8, description: "Slower than", value: 8, label: "Tastier than" },
+  { id: 9, description: "Slower than", value: 9, label: "Less tasty than" }
 ];
 
 export let topicComparisons = [
@@ -31,14 +28,14 @@ export let topicComparisons = [
   { topicId: 1, comparisonId: 2 },
   { topicId: 1, comparisonId: 3 },
   { topicId: 1, comparisonId: 4 },
-  { topicId: 1, comparisonId: 5 },
+  // { topicId: 1, comparisonId: 5 },
   { topicId: 1, comparisonId: 6 },
   { topicId: 1, comparisonId: 7 },
   { topicId: 2, comparisonId: 1 },
   { topicId: 2, comparisonId: 2 },
   { topicId: 2, comparisonId: 3 },
   { topicId: 2, comparisonId: 4 },
-  { topicId: 2, comparisonId: 5 },
+  // { topicId: 2, comparisonId: 5 },
   { topicId: 2, comparisonId: 6 },
   { topicId: 2, comparisonId: 7 },
   { topicId: 3, comparisonId: 1 },
@@ -53,18 +50,26 @@ export let topicComparisons = [
   { topicId: 5, comparisonId: 2 },
   { topicId: 5, comparisonId: 3 },
   { topicId: 5, comparisonId: 4 },
+  { topicId: 5, comparisonId: 8 },
+  { topicId: 5, comparisonId: 9 },
   { topicId: 6, comparisonId: 1 },
   { topicId: 6, comparisonId: 2 },
   { topicId: 6, comparisonId: 3 },
   { topicId: 6, comparisonId: 4 },
+  { topicId: 6, comparisonId: 8 },
+  { topicId: 6, comparisonId: 9 },
   { topicId: 7, comparisonId: 1 },
   { topicId: 7, comparisonId: 2 },
   { topicId: 7, comparisonId: 3 },
   { topicId: 7, comparisonId: 4 },
+  { topicId: 7, comparisonId: 8 },
+  { topicId: 7, comparisonId: 9 },
   { topicId: 8, comparisonId: 1 },
   { topicId: 8, comparisonId: 2 },
   { topicId: 8, comparisonId: 3 },
   { topicId: 8, comparisonId: 4 },
+  { topicId: 8, comparisonId: 8 },
+  { topicId: 8, comparisonId: 9 },
   { topicId: 9, comparisonId: 1 },
   { topicId: 9, comparisonId: 2 },
   { topicId: 9, comparisonId: 3 },
@@ -84,7 +89,5 @@ export let topicComparisons = [
   { topicId: 11, comparisonId: 3 },
   { topicId: 11, comparisonId: 4 },
   { topicId: 11, comparisonId: 6 },
-  { topicId: 11, comparisonId: 7 },
-  { topicId: 11, comparisonId: 8 },
-  { topicId: 12, comparisonId: 8 }
+  { topicId: 11, comparisonId: 7 }
 ];

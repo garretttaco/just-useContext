@@ -33,7 +33,7 @@ export default function ComplicatedForm() {
       let topic = get(stateUpdate, "topic", state.topic);
       let value = get(stateUpdate, "value", state.value);
       let comparison = get(stateUpdate, "comparison", state.comparison);
-      let { topicComparisons, comparisons } = apiData;
+      let { topicComparisons } = apiData;
       let filteredTopicComparisons =
         isEmpty(topic) && isEmpty(value)
           ? topicComparisons
@@ -41,17 +41,19 @@ export default function ComplicatedForm() {
           ? topicComparisons.filter(tc => tc.topicId === value.id)
           : topicComparisons.filter(tc => tc.topicId === topic.id);
       let updatedState = stateUpdate;
-      console.log("--------filteredComparisons", filteredTopicComparisons);
-      if (!filteredTopicComparisons.find(fc => fc.topicId === topic.id)) {
+      if (
+        !isEmpty(filteredTopicComparisons) &&
+        !filteredTopicComparisons.find(fc => fc.topicId === topic.id)
+      ) {
         updatedState.topic = {};
-      }
-      if (!filteredTopicComparisons.find(fc => fc.topicId === value.id)) {
-        updatedState.value = {};
       }
       if (
         !filteredTopicComparisons.find(fc => fc.comparisonId === comparison.id)
       ) {
         updatedState.comparison = {};
+      }
+      if (isEmpty(filteredTopicComparisons)) {
+        updatedState.value = {};
       }
       return { ...state, ...updatedState, filteredTopicComparisons };
     });
@@ -67,7 +69,6 @@ export default function ComplicatedForm() {
     <div css={formContainer}>
       <FormContext.Provider value={{ ...form, ...apiData, setForm }}>
         <Topic />
-        {/* TODO: Add a display of values selected in a string */}
         <DisplayComparison />
       </FormContext.Provider>
     </div>
@@ -114,12 +115,18 @@ function Comparison() {
 }
 
 function Value() {
-  let { value, topic, topics, filteredTopicComparisons, setForm } = useContext(
-    FormContext
-  );
-  let filteredTopics = filteredTopicComparisons
-    .map(fc => topics.find(t => t.id === fc.topicId))
-    .filter(t => t.id !== value.id);
+  let {
+    value,
+    topic,
+    comparison,
+    topics,
+    topicComparisons,
+    setForm
+  } = useContext(FormContext);
+  let filteredTopics = topicComparisons
+    .filter(tc => tc.comparisonId === comparison.id)
+    .filter(tc => tc.topicId !== topic.id)
+    .map(tc => topics.find(t => t.id === tc.topicId));
   return (
     <div>
       <Label>Value</Label>
